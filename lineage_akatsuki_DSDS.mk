@@ -12,15 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/lineage_akatsuki.mk \
-	$(LOCAL_DIR)/lineage_akatsuki_DSDS.mk
+# Inherit device parts
+$(call inherit-product, device/sony/akatsuki/aosp_h9436.mk)
 
-COMMON_LUNCH_CHOICES += \
-    lineage_akatsuki-eng \
-    lineage_akatsuki-userdebug \
-    lineage_akatsuki-user \
-	lineage_akatsuki_DSDS-eng \
-	lineage_akatsuki_DSDS-userdebug \
-	lineage_akatsuki_DSDS-user
+# Override Product Name
+PRODUCT_NAME := lineage_akatsuki_DSDS
 
+# Assert
+TARGET_OTA_ASSERT_DEVICE := akatsuki
